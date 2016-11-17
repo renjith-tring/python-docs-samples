@@ -69,11 +69,11 @@ def entities_text(text):
 
     for entity in entities:
         print('=' * 20)
-        print('         name: %s' % (entity.name,))
-        print('         type: %s' % (entity.entity_type,))
-        print('wikipedia_url: %s' % (entity.wikipedia_url,))
-        print('     metadata: %s' % (entity.metadata,))
-        print('     salience: %s' % (entity.salience,))
+        print('{:<16}: {}'.format('name', entity.name))
+        print('{:<16}: {}'.format('type', entity.entity_type))
+        print('{:<16}: {}'.format('wikipedia_url', entity.wikipedia_url))
+        print('{:<16}: {}'.format('metadata', entity.metadata))
+        print('{:<16}: {}'.format('salience', entity.salience))
 
 
 def entities_file(gcs_uri):
@@ -89,11 +89,11 @@ def entities_file(gcs_uri):
 
     for entity in entities:
         print('=' * 20)
-        print('         name: %s' % (entity.name,))
-        print('         type: %s' % (entity.entity_type,))
-        print('wikipedia_url: %s' % (entity.wikipedia_url,))
-        print('     metadata: %s' % (entity.metadata,))
-        print('     salience: %s' % (entity.salience,))
+        print('{:<16}: {}'.format('name', entity.name))
+        print('{:<16}: {}'.format('type', entity.entity_type))
+        print('{:<16}: {}'.format('wikipedia_url', entity.wikipedia_url))
+        print('{:<16}: {}'.format('metadata', entity.metadata))
+        print('{:<16}: {}'.format('salience', entity.salience))
 
 
 def syntax_text(text):
@@ -108,7 +108,7 @@ def syntax_text(text):
     tokens = document.analyze_syntax()
 
     for token in annotations.tokens:
-        print('%11s: %s' % (token.part_of_speech, token.text_content))
+        print('{}: {}'.format(token.part_of_speech, token.text_content))
 
 
 def syntax_file(gcs_uri):
@@ -123,7 +123,7 @@ def syntax_file(gcs_uri):
     tokens = document.analyze_syntax()
 
     for token in annotations.tokens:
-        print('%11s: %s' % (token.part_of_speech, token.text_content))
+        print('{}: {}'.format(token.part_of_speech, token.text_content))
 
 
 if __name__ == '__main__':
